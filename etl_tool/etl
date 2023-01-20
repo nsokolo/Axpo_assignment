@@ -1,0 +1,36 @@
+#!/usr/bin/env python
+
+import argparse
+from etl_tool.src.main import main
+from etl_tool.src.utils import CustomException
+
+
+def run_etl(params: {}):
+    if params.get('command') == 'test':
+        print("Yay! It works, you can go on with your etl now!")
+    elif params.get('command') == 'run':
+        report = params.get('report')
+        start_day = params.get('start_day')
+        end_day = params.get('end_day')
+        main(report=report, start_date=start_day, end_date=end_day)
+    else:
+        raise CustomException("invalid command - valid options are: 'test' or 'run'")
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(prog='etl')
+    subparsers = parser.add_subparsers(title='command', dest='command')
+
+    # parse command
+    parse_parser = subparsers.add_parser('run')
+    parse_parser.add_argument('--report', required=True,
+                              choices=["generacja_mocy", "wielkości_podstawowe", 'kontrakty_godzinowe'],
+                              help="Specify which report do you want to generate.")
+    parse_parser.add_argument('--start_date', required=True, help="Starting date of your report in 'yyyy-mm-dd' format")
+    parse_parser.add_argument('--end_date', required=True, help="Ending date of your report in 'yyyy-mm-dd' format")
+
+    # test command
+    parse_parser = subparsers.add_parser('test')
+
+    args = parser.parse_args()
+    run_etl(vars(args))
