@@ -10,8 +10,8 @@ def run_etl(params: {}):
         print("Yay! It works, you can go on with your etl now!")
     elif params.get('command') == 'run':
         report = params.get('report')
-        start_day = params.get('start_day')
-        end_day = params.get('end_day')
+        start_day = params.get('start_date')
+        end_day = params.get('end_date')
         main(report=report, start_date=start_day, end_date=end_day)
     else:
         raise CustomException("invalid command - valid options are: 'test' or 'run'")
