@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "etl_tool"
+version = "1.0.0"
+authors = [
+  { name="Natalia Sokołowska", email="sokolowska.natalia.anna@gmail.com" },
+]
+description = "ETL tool for Axpo assignment needs"
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3.9",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
