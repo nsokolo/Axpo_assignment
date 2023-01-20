@@ -1,5 +1,5 @@
-from utils import DateRange
-from loaders import Loader
+from src.utils import DateRange
+from src.loaders import Loader
 import pandas as pd
 
 

@@ -1,7 +1,7 @@
-from utils import DateRange
+from src.utils import DateRange
 import pandas as pd
 from typing import Union
-from extractors import HoursContractsExtractor, PowerGenerationExtractor, BasicUnitsExtractor
+from src.extractors import HoursContractsExtractor, PowerGenerationExtractor, BasicUnitsExtractor
 pd.set_option('display.max_columns', None)
 
 

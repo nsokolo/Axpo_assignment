@@ -1,7 +1,7 @@
-from etl_tool.src.extract import extract_data
-from transform import transform_data
-from load import load_data
-from utils import DateRange
+from src.extract import extract_data
+from src.transform import transform_data
+from src.load import load_data
+from src.utils import DateRange
 
 
 def main(start_date: str, end_date: str, report: str):

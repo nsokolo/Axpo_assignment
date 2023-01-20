@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 
 import argparse
-from etl_tool.src.main import main
-from etl_tool.src.utils import CustomException
+from src.main import main
+from src.utils import CustomException
 
 
 def run_etl(params: {}):
