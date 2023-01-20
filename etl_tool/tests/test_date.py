@@ -1,5 +1,5 @@
 import pytest
-from src.utils import DateRange, CustomException
+from etl_tool.src.utils import DateRange, CustomException
 
 
 def test_convert_to_date_type():

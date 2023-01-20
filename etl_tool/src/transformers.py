@@ -1,7 +1,6 @@
 from utils import DateRange
 import pandas as pd
 from typing import Union
-import datetime
 
 
 class Transformer:
@@ -18,7 +17,7 @@ class Transformer:
 
 
 class HoursContractsTransformer(Transformer):
-    def __init__(self, data: Union[pd.DataFrame, list[pd.DataFrame]], date_range: DateRange):
+    def __init__(self, data: list[pd.DataFrame], date_range: DateRange):
         super(HoursContractsTransformer, self).__init__(data, date_range)
 
     def transform(self):
@@ -43,7 +42,7 @@ class HoursContractsTransformer(Transformer):
 
 
 class PowerGenerationTransformer(Transformer):
-    def __init__(self, data: Union[pd.DataFrame, list[pd.DataFrame]], date_range: DateRange):
+    def __init__(self, data: pd.DataFrame, date_range: DateRange):
         super(PowerGenerationTransformer, self).__init__(data, date_range)
 
     def transform(self):
@@ -51,7 +50,7 @@ class PowerGenerationTransformer(Transformer):
 
 
 class BasicUnitsTransformer(Transformer):
-    def __init__(self, data: Union[pd.DataFrame, list[pd.DataFrame]], date_range: DateRange):
+    def __init__(self, data: pd.DataFrame, date_range: DateRange):
         super(BasicUnitsTransformer, self).__init__(data, date_range)
 
     def transform(self):

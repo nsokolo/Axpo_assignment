@@ -1,4 +1,4 @@
-from src.extract import extract_data
+from etl_tool.src.extract import extract_data
 from transform import transform_data
 from load import load_data
 from utils import DateRange
