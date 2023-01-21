@@ -67,7 +67,6 @@ will result with extracting data from https://www.pse.pl/dane-systemowe/funkcjon
 for days between **01-01-2023** and **03-01-2023**, apply appropriate transformation and save results into `generacja_mocy_20230101-20230103.csv` in main folder.
 
 ## Few comments
-
-The main idea for this package is the separation of extract, transform and load logic. Each component inherits from 
-general, semi-abstract class of given type to ensure that contract between components will be perceived. Adding new data 
-sources will demand to add  extract and transform classes, without any changes in current logic.
+With a focus on modularity, the package boasts a clear separation of extract, transform, and load logic. 
+Each component adheres to a general, semi-abstract class, guaranteeing compatibility and ease of use. 
+Adding new data sources is made simple, requiring only the addition of extract and transform classes, without any disruptions to the existing framework.
