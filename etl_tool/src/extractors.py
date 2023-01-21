@@ -24,10 +24,11 @@ class HoursContractsExtractor(Extractor):
 
     def __init__(self, date_range: DateRange):
         super(HoursContractsExtractor, self).__init__(date_range)
+        self.check_if_date_range_is_valid()
 
-    def check_if_date_range_id_valid(self):
+    def check_if_date_range_is_valid(self):
         if self.date_range.date_range_longer_than_two_months():
-            raise CustomException("Date range is two long, only two moths ")
+            raise CustomException("Date range is two long, data for only two months back are available")
 
     def __load_data(self, date: str):
         print(f"Extracting data for date: {date}")
