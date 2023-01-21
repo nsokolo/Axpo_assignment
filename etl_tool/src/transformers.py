@@ -31,7 +31,7 @@ class HoursContractsTransformer(Transformer):
         for column in res_df.columns:
             if 'Czas' not in column and 'date' not in column:
                 res_df[column] = res_df[column].astype(float)
-
+        res_df = res_df.reset_index(drop=True)
         res_df.loc['Min.', :] = res_df[[('FIXING I', 'Kurs (PLN/MWh)'), ('FIXING II', 'Kurs (PLN/MWh)'),
                                        ('Notowania ciągłe', 'Kurs (PLN/MWh)')]].min(axis=0)
         res_df.loc['Maks.', :] = res_df[[('FIXING I', 'Kurs (PLN/MWh)'), ('FIXING II', 'Kurs (PLN/MWh)'),
